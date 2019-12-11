@@ -14,7 +14,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
     internal weak var delegate: YPLibraryViewDelegate?
     internal var v: YPLibraryView!
     internal var isProcessing = false // true if video or image is in processing state
-    internal var multipleSelectionEnabled = false
+    internal var multipleSelectionEnabled = true
     internal var initialized = false
     internal var selection = [YPLibrarySelection]()
     internal var currentlySelectedIndex: Int = 0
@@ -41,9 +41,9 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         title = album.title
         mediaManager.collection = album.collection
         currentlySelectedIndex = 0
-        if !multipleSelectionEnabled {
-            selection.removeAll()
-        }
+//        if !multipleSelectionEnabled {
+//            selection.removeAll()
+//        }
         refreshMediaRequest()
     }
     
@@ -84,7 +84,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
                 return YPLibrarySelection(index: -1, assetIdentifier: asset.localIdentifier)
             }
 
-            multipleSelectionEnabled = selection.count > 1
+//            multipleSelectionEnabled = selection.count > 1
             v.assetViewContainer.setMultipleSelectionMode(on: multipleSelectionEnabled)
             v.collectionView.reloadData()
         }
@@ -164,9 +164,9 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
     }
     
     private func showMultipleSelection() {
-        if !multipleSelectionEnabled {
-            selection.removeAll()
-        }
+//        if !multipleSelectionEnabled {
+//            selection.removeAll()
+//        }
         
         // Prevent desactivating multiple selection when using `minNumberOfItems`
         if YPConfig.library.minNumberOfItems > 1 && multipleSelectionEnabled {
