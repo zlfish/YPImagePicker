@@ -57,7 +57,8 @@ open class YPImagePicker: UINavigationController {
 override open func viewDidLoad() {
         super.viewDidLoad()
         picker.didClose = { [weak self] in
-            self?._didFinishPicking?([], true)
+//            self?._didFinishPicking?([], true)
+            self?.dismiss(animated: true, completion: nil)
         }
         viewControllers = [picker]
         setupLoadingView()
