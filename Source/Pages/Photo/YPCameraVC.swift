@@ -42,6 +42,10 @@ public class YPCameraVC: UIViewController, UIGestureRecognizerDelegate, YPPermis
     }
     
     func start() {
+        
+        //this button is enable when the page is appear
+        v.shotButton.isEnabled = true
+        
         doAfterPermissionCheck { [weak self] in
             guard let strongSelf = self else {
                 return

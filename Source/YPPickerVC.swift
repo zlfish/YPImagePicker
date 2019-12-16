@@ -67,6 +67,11 @@ open class YPPickerVC: YPBottomPager, YPBottomPagerDelegate {
             cameraVC?.didCapturePhoto = { [weak self] img in
                 self?.didSelectItems?([YPMediaItem.photo(p: YPMediaPhoto(image: img,
                                                                         fromCamera: true))])
+                guard let strongSelf = self else {
+                    return
+                }
+                
+                strongSelf.changeScreens()
             }
         }
         
@@ -81,6 +86,10 @@ open class YPPickerVC: YPBottomPager, YPBottomPagerDelegate {
             }
         }
         
+        self.showScreens()
+    }
+    
+    private func showScreens() {
         // Show screens
         var vcs = [UIViewController]()
         for screen in YPConfig.screens {
@@ -120,6 +129,10 @@ open class YPPickerVC: YPBottomPager, YPBottomPagerDelegate {
         
         YPHelper.changeBackButtonIcon(self)
         YPHelper.changeBackButtonTitle(self)
+    }
+    
+    private func changeScreens() {
+        showPage(0, animated: true)
     }
     
     open override func viewWillAppear(_ animated: Bool) {
