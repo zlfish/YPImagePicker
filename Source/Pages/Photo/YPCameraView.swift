@@ -13,7 +13,6 @@ class YPCameraView: UIView, UIGestureRecognizerDelegate {
     
     let focusView = UIView(frame: CGRect(x: 0, y: 0, width: 90, height: 90))
     let previewViewContainer = UIView()
-    let buttonsContainer = UIView()
     let flipButton = UIButton()
     let shotButton = UIButton()
     let flashButton = UIButton()
@@ -32,9 +31,7 @@ class YPCameraView: UIView, UIGestureRecognizerDelegate {
                 timeElapsedLabel,
                 flashButton,
                 flipButton,
-                buttonsContainer.sv(
-                    shotButton
-                )
+                shotButton
             )
         } else {
             // View Hierarchy
@@ -44,9 +41,7 @@ class YPCameraView: UIView, UIGestureRecognizerDelegate {
                 timeElapsedLabel,
                 flashButton,
                 flipButton,
-                buttonsContainer.sv(
-                    shotButton
-                )
+                shotButton
             )
         }
         
@@ -58,13 +53,11 @@ class YPCameraView: UIView, UIGestureRecognizerDelegate {
             |-sideMargin-previewViewContainer-sideMargin-|,
             -2,
             |progressBar|,
-            0,
-            |buttonsContainer|,
             0
         )
 //        previewViewContainer.heightEqualsWidth()
         (previewViewContainer.Top == 0).priority = UILayoutPriority(999)
-        (previewViewContainer.Bottom == 58).priority = UILayoutPriority(999)
+        (previewViewContainer.Bottom == 0).priority = UILayoutPriority(999)
 
         overlayView?.followEdges(previewViewContainer)
 
@@ -76,9 +69,9 @@ class YPCameraView: UIView, UIGestureRecognizerDelegate {
         
         timeElapsedLabel-(15+sideMargin)-|
         timeElapsedLabel.Top == previewViewContainer.Top + 15
-        
-        shotButton.centerVertically()
+
         shotButton.size(56).centerHorizontally()
+        shotButton.Bottom == previewViewContainer.Bottom - 15
 
         // Style
         backgroundColor = YPConfig.colors.photoVideoScreenBackgroundColor
