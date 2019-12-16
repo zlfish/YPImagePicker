@@ -97,7 +97,11 @@ override open func viewDidLoad() {
                         let isModified = photo.modifiedImage != nil
                         if photo.fromCamera || (!photo.fromCamera && isModified) {
                             YPPhotoSaver.trySaveImage(photo.image, inAlbumNamed: YPConfig.albumName)
+                        }else {
+                            self?.didSelect(items: [mediaItem])
                         }
+                    }else {
+                        self?.didSelect(items: [mediaItem])
                     }
                     //no goto didFinishSelect
 //                    self?.didSelect(items: [mediaItem])
