@@ -99,7 +99,9 @@ override open func viewDidLoad() {
                             YPPhotoSaver.trySaveImage(photo.image, inAlbumNamed: YPConfig.albumName)
                         }
                     }
-                    self?.didSelect(items: [mediaItem])
+                    //no goto didFinishSelect
+//                    self?.didSelect(items: [mediaItem])
+                    
                 }
                 
                 func showCropVC(photo: YPMediaPhoto, completion: @escaping (_ aphoto: YPMediaPhoto) -> Void) {

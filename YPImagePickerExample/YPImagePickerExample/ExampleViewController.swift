@@ -202,10 +202,7 @@ class ExampleViewController: UIViewController {
                 switch firstItem {
                 case .photo(let photo):
                     self.selectedImageV.image = photo.image
-                    if photo.asset != nil {
-                        picker.dismiss(animated: true, completion: nil)
-                    }
-                    
+                    picker.dismiss(animated: true, completion: nil)
                 case .video(let video):
                     self.selectedImageV.image = video.thumbnail
                     
