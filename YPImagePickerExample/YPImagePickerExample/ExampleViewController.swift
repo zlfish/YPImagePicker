@@ -180,6 +180,7 @@ class ExampleViewController: UIViewController {
         config.startOnScreen = .library
         config.screens = [.library, .photo]
         config.preferredStatusBarStyle = UIStatusBarStyle.lightContent
+        config.onlySquareImagesFromCamera = false
         
         let picker = YPImagePicker(configuration: config)
 

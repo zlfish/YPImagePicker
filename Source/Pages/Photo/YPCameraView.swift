@@ -62,7 +62,9 @@ class YPCameraView: UIView, UIGestureRecognizerDelegate {
             |buttonsContainer|,
             0
         )
-        previewViewContainer.heightEqualsWidth()
+//        previewViewContainer.heightEqualsWidth()
+        (previewViewContainer.Top == 0).priority = UILayoutPriority(999)
+        (previewViewContainer.Bottom == 58).priority = UILayoutPriority(999)
 
         overlayView?.followEdges(previewViewContainer)
 
@@ -76,7 +78,7 @@ class YPCameraView: UIView, UIGestureRecognizerDelegate {
         timeElapsedLabel.Top == previewViewContainer.Top + 15
         
         shotButton.centerVertically()
-        shotButton.size(84).centerHorizontally()
+        shotButton.size(56).centerHorizontally()
 
         // Style
         backgroundColor = YPConfig.colors.photoVideoScreenBackgroundColor
