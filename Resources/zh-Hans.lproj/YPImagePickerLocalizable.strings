@@ -19,4 +19,4 @@
 "YPImagePickerVideoDurationTitle" = "视频时长";
 "YPImagePickerVideoTooLong" = "视频时长大于 %@ 秒";
 "YPImagePickerVideoTooShort" = "视频时长小于 %@ 秒";
-"YPImagePickerWarningItemsLimit" = "图片或视频的最多可选数量为 %d ";
+"YPImagePickerWarningItemsLimit" = "图片最多可选数量为 %d ";
