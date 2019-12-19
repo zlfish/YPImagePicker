@@ -29,7 +29,7 @@ class YPAssetViewContainer: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        addSubview(grid)
+//        addSubview(grid)
         grid.frame = frame
         clipsToBounds = true
         
@@ -79,10 +79,10 @@ class YPAssetViewContainer: UIView {
         sv(multipleSelectionButton)
         multipleSelectionButton.size(42)
         multipleSelectionButton-15-|
-        multipleSelectionButton.setImage(YPConfig.icons.multipleSelectionOffIcon, for: .normal)
+//        multipleSelectionButton.setImage(YPConfig.icons.multipleSelectionOffIcon, for: .normal)
         multipleSelectionButton.Bottom == zoomableView!.Bottom - 15
         multipleSelectionButton.isUserInteractionEnabled = false //force mutipSelect
-        
+        multipleSelectionButton.isHidden = true
     }
     
     // MARK: - Square button
@@ -115,8 +115,8 @@ class YPAssetViewContainer: UIView {
     /// Use this to update the multiple selection mode UI state for the YPAssetViewContainer
     public func setMultipleSelectionMode(on: Bool) {
         isMultipleSelection = on
-        let image = on ? YPConfig.icons.multipleSelectionOnIcon : YPConfig.icons.multipleSelectionOffIcon
-        multipleSelectionButton.setImage(image, for: .normal)
+//        let image = on ? YPConfig.icons.multipleSelectionOnIcon : YPConfig.icons.multipleSelectionOffIcon
+//        multipleSelectionButton.setImage(image, for: .normal)
         refreshSquareCropButton()
     }
 }

@@ -281,7 +281,8 @@ open class YPPickerVC: YPBottomPager, YPBottomPagerDelegate {
                                                            style: .plain,
                                                            target: self,
                                                            action: #selector(close))
-        navigationItem.leftBarButtonItem?.tintColor = YPConfig.colors.tintColor
+//        navigationItem.leftBarButtonItem?.tintColor = YPConfig.colors.tintColor
+        navigationItem.leftBarButtonItem?.tintColor = .white
 
         switch mode {
         case .library:
@@ -290,7 +291,8 @@ open class YPPickerVC: YPBottomPager, YPBottomPagerDelegate {
                                                                 style: .done,
                                                                 target: self,
                                                                 action: #selector(done))
-            navigationItem.rightBarButtonItem?.tintColor = YPConfig.colors.tintColor
+//            navigationItem.rightBarButtonItem?.tintColor = YPConfig.colors.tintColor
+            navigationItem.rightBarButtonItem?.tintColor = .white
             
             // Disable Next Button until minNumberOfItems is reached.
             navigationItem.rightBarButtonItem?.isEnabled = libraryVC!.selection.count >= 1
