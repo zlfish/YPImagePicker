@@ -58,7 +58,7 @@ class YPLibraryViewCell: UICollectionViewCell {
     var representedAssetIdentifier: String!
     let imageView = UIImageView()
     let durationLabel = UILabel()
-    let selectionOverlay = UIView()
+//    let selectionOverlay = UIView()
     let multipleSelectionIndicator = YPMultipleSelectionIndicator()
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -68,12 +68,12 @@ class YPLibraryViewCell: UICollectionViewCell {
         sv(
             imageView,
             durationLabel,
-            selectionOverlay,
+//            selectionOverlay,
             multipleSelectionIndicator
         )
 
         imageView.fillContainer()
-        selectionOverlay.fillContainer()
+//        selectionOverlay.fillContainer()
         layout(
             durationLabel-5-|,
             5
@@ -89,8 +89,8 @@ class YPLibraryViewCell: UICollectionViewCell {
         durationLabel.textColor = .white
         durationLabel.font = .systemFont(ofSize: 12)
         durationLabel.isHidden = true
-        selectionOverlay.backgroundColor = .white
-        selectionOverlay.alpha = 0
+//        selectionOverlay.backgroundColor = .white
+//        selectionOverlay.alpha = 0
         backgroundColor = UIColor(r: 247, g: 247, b: 247)
     }
 
@@ -100,7 +100,7 @@ class YPLibraryViewCell: UICollectionViewCell {
     
     override var isHighlighted: Bool {
         didSet {
-            selectionOverlay.alpha = isHighlighted ? 0.6 : 0
+//            selectionOverlay.alpha = isHighlighted ? 0.6 : 0
         }
     }
 }

@@ -15,6 +15,7 @@ extension YPLibraryVC {
         v.collectionView.backgroundColor = YPConfig.colors.libraryScreenBackgroundColor
         v.collectionView.dataSource = self
         v.collectionView.delegate = self
+        v.collectionView.bounces = false
         v.collectionView.register(YPLibraryViewCell.self, forCellWithReuseIdentifier: "YPLibraryViewCell")
         
         // Long press on cell to enable multiple selection
@@ -165,13 +166,13 @@ extension YPLibraryVC: UICollectionViewDelegate {
         currentlySelectedIndex = indexPath.row
 
         changeAsset(mediaManager.fetchResult[indexPath.row])
-        panGestureHelper.resetToOriginalState()
+//        panGestureHelper.resetToOriginalState()
         
         // Only scroll cell to top if preview is hidden.
-        if !panGestureHelper.isImageShown {
-            collectionView.scrollToItem(at: indexPath, at: .top, animated: true)
-        }
-        v.refreshImageCurtainAlpha()
+//        if !panGestureHelper.isImageShown {
+//            collectionView.scrollToItem(at: indexPath, at: .top, animated: true)
+//        }
+//        v.refreshImageCurtainAlpha()
 
         if multipleSelectionEnabled {
             
